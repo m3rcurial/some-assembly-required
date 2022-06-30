@@ -30,7 +30,8 @@ jobs:
         run: |
           mkdir output  # create output dir
           # this will also include README.md
-          echo "::set-output name=files::$(printf '"%s" ' *.md)"
+          # echo "::set-output name=files::$(printf '"%s" ' *.md)"
+          echo "::set-output name=files::$(find . -name "*.md" -type f)
 
       - uses: docker://pandoc/core:2.18
         with:
